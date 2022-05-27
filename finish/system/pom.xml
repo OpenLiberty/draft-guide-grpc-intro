@@ -26,7 +26,7 @@
         <dependency>
             <groupId>jakarta.platform</groupId>
             <artifactId>jakarta.jakartaee-api</artifactId>
-            <version>9.1.0</version>
+            <version>8.0.0</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -37,11 +37,11 @@
             <scope>provided</scope>
         </dependency>
         <!-- Java utility classes -->
-        <dependency>
+        <!-- <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
             <version>3.12.0</version>
-        </dependency>
+        </dependency> -->
         <!-- grpc compile dependencies; provided by Liberty at runtime -->
         <dependency>
             <groupId>io.grpc</groupId>
@@ -110,6 +110,16 @@
                 <finalName>${project.artifactId}</finalName>
                 <plugins>
                     <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-war-plugin</artifactId>
+                        <version>3.3.1</version>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-compiler-plugin</artifactId>
+                        <version>3.8.1</version>
+                    </plugin>
+                    <plugin>
                         <groupId>io.openliberty.tools</groupId>
                         <artifactId>liberty-maven-plugin</artifactId>
                         <version>${openliberty.maven.version}</version>
@@ -121,7 +131,6 @@
                                 <traceSpec>*=info</traceSpec>
                                 <sampleAppName>${project.build.finalName}</sampleAppName>
                             </bootstrapProperties>
-                            <!-- <serverName>defaultServer</serverName> -->
                             <features>
                                 <acceptLicense>true</acceptLicense>
                                 <feature>grpc-1.0</feature>

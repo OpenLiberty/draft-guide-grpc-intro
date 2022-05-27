@@ -5,7 +5,7 @@ import java.util.Properties;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
 import io.grpc.stub.StreamObserver;
-import io.openliberty.guides.system.SystemServiceGrpc;
+import io.openliberty.guides.system.SystemService;
 import io.openliberty.guides.system.SystemServiceRequest;
 import io.openliberty.guides.system.SystemServiceResponse;
 
