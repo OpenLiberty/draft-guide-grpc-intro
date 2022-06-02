@@ -8,7 +8,8 @@
 
     <modules> 
         <module>system</module>
-        <module>inventory</inventory>
+        <module>inventory</module>
+        <module>systemproto</module>
     </modules>
     
 </project> 

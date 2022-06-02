@@ -5,9 +5,9 @@ import java.util.Properties;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
 import io.grpc.stub.StreamObserver;
-import io.openliberty.guides.system.SystemService;
-import io.openliberty.guides.system.SystemServiceRequest;
-import io.openliberty.guides.system.SystemServiceResponse;
+import io.openliberty.guides.systemproto.SystemServiceGrpc;
+import io.openliberty.guides.systemproto.SystemServiceRequest;
+import io.openliberty.guides.systemproto.SystemServiceResponse;
 
 public class SystemService extends SystemServiceGrpc.SystemServiceImplBase {
 

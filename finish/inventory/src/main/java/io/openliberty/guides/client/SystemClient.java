@@ -1,11 +1,10 @@
 package io.openliberty.guides.inventory.client;
 
 import io.openliberty.*;
-import io.openliberty.guides.system.SystemServiceGrpc;
-import io.openliberty.guides.system.SystemServiceRequest;
-import io.openliberty.guides.system.SystemServiceResponse;
-import io.openliberty.guides.system.SystemServiceGrpc.SystemServiceBlockingStub;
-import io.openliberty.guides.system.SystemService;
+import io.openliberty.guides.systemproto.SystemServiceGrpc;
+import io.openliberty.guides.systemproto.SystemServiceRequest;
+import io.openliberty.guides.systemproto.SystemServiceResponse;
+import io.openliberty.guides.systemproto.SystemServiceGrpc.SystemServiceBlockingStub;
 
 import java.io.IOException;
 import java.io.PrintWriter;

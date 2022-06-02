@@ -11,11 +11,10 @@ import javax.ws.rs.core.MediaType;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 
-import io.openliberty.guides.system.SystemServiceGrpc;
-import io.openliberty.guides.system.SystemServiceRequest;
-import io.openliberty.guides.system.SystemServiceResponse;
-import io.openliberty.guides.system.SystemServiceGrpc.SystemServiceBlockingStub;
-import io.openliberty.guides.system.SystemService;
+import io.openliberty.guides.systemproto.SystemServiceGrpc;
+import io.openliberty.guides.systemproto.SystemServiceRequest;
+import io.openliberty.guides.systemproto.SystemServiceResponse;
+import io.openliberty.guides.systemproto.SystemServiceGrpc.SystemServiceBlockingStub;
 
 // @RequestScoped
 @Path("/properties")
