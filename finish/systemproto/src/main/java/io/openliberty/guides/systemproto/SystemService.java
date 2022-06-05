@@ -1,4 +1,4 @@
-package io.openliberty.guides.system;
+package io.openliberty.guides.systemproto;
 
 import java.util.Properties;
 
