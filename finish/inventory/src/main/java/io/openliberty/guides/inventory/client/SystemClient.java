@@ -1,29 +1,14 @@
 package io.openliberty.guides.inventory.client;
 
-import io.openliberty.*;
 import io.openliberty.guides.systemproto.SystemServiceGrpc;
 import io.openliberty.guides.systemproto.SystemServiceRequest;
 import io.openliberty.guides.systemproto.SystemServiceResponse;
-import io.openliberty.guides.systemproto.SystemServiceGrpc.SystemServiceBlockingStub;
 
-import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.Properties;
 import java.util.logging.Logger;
 
-import javax.annotation.PostConstruct;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.ws.rs.Path;
-
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
-
-import org.eclipse.microprofile.rest.client.annotation.RegisterProvider;
-import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 
 public class SystemClient {
 

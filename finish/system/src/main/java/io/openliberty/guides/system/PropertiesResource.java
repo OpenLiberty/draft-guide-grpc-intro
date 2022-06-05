@@ -1,8 +1,6 @@
 package io.openliberty.guides.system;
 
 import java.util.Properties;
-import javax.enterprise.context.RequestScoped;
-import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -14,9 +12,7 @@ import io.grpc.ManagedChannelBuilder;
 import io.openliberty.guides.systemproto.SystemServiceGrpc;
 import io.openliberty.guides.systemproto.SystemServiceRequest;
 import io.openliberty.guides.systemproto.SystemServiceResponse;
-import io.openliberty.guides.systemproto.SystemServiceGrpc.SystemServiceBlockingStub;
 
-// @RequestScoped
 @Path("/properties")
 public class PropertiesResource {
 
