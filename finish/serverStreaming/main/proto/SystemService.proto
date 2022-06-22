@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package io.openliberty.guides.systemproto;
+
+option java_multiple_files = true;
+
+service SystemService {
+    // unary
+    // original system inv or graphql
+    // resembles rest api
+    rpc getSystem (SystemServiceRequest) returns (SystemServiceResponse) {}
+
+    // server streaming
+    // system load
+    rpc getResponse (SystemServiceRequest) returns (stream SystemServiceResponse) {}
+
+    // client streaming
+    rpc getClientStreamingSystem (stream SystemServiceRequest) returns (SystemServiceResponse) {}
+
+    // bidirectional streaming
+    rpc getBidirectionalSystem (stream SystemServiceRequest) returns (stream SystemServiceResponse) {}
+}
+
+message SystemServiceResponse {
+    string os = 1;
+    string systemLoad = 2;
+}
+
+message SystemServiceRequest {}

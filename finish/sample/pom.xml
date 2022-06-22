@@ -2,21 +2,25 @@
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.openliberty.guides</groupId>
-    <artifactId>systemproto</artifactId>
+    <artifactId>sample</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <failOnMissingWebXml>false</failOnMissingWebXml>
-        <protobuf-maven-plugin.version>0.6.1</protobuf-maven-plugin.version>
         <!-- Liberty configuration -->
-        <liberty.var.default.http.port>9081</liberty.var.default.http.port>
-        <liberty.var.default.https.port>9444</liberty.var.default.https.port>
+        <liberty.var.default.http.port>9080</liberty.var.default.http.port>
+        <liberty.var.default.https.port>9443</liberty.var.default.https.port>
     </properties>
     <dependencies>
         <!-- Provided dependencies -->
+        <dependency>
+           <groupId>io.openliberty.guides</groupId>
+           <artifactId>systemproto</artifactId>
+           <version>1.0-SNAPSHOT</version>
+        </dependency>
         <dependency>
             <groupId>jakarta.platform</groupId>
             <artifactId>jakarta.jakartaee-api</artifactId>
@@ -30,16 +34,11 @@
             <type>pom</type>
             <scope>provided</scope>
         </dependency>
+        <!-- Java utility classes -->
         <dependency>
-            <groupId>org.apache.kafka</groupId>
-            <artifactId>kafka-clients</artifactId>
-            <version>2.7.0</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>io.reactivex.rxjava3</groupId>
-            <artifactId>rxjava</artifactId>
-            <version>3.0.0</version>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.12.0</version>
         </dependency>
         <!-- grpc compile dependencies; provided by Liberty at runtime -->
         <dependency>
@@ -106,11 +105,12 @@
                         <extensions>true</extensions>
                         <configuration>
                             <bootstrapProperties>
-                                <httpPort>9081</httpPort>
-                                <httpsPort>9444</httpsPort>
+                                <httpPort>9080</httpPort>
+                                <httpsPort>9443</httpsPort>
                                 <traceSpec>*=info</traceSpec>
                                 <sampleAppName>${project.build.finalName}</sampleAppName>
                             </bootstrapProperties>
+                            <!-- <serverName>defaultServer</serverName> -->
                             <features>
                                 <acceptLicense>true</acceptLicense>
                                 <feature>grpc-1.0</feature>
